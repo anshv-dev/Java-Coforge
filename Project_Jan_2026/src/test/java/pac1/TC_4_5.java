@@ -8,7 +8,7 @@ import java.util.Scanner;
  
 public class TC_4_5 {
  
-    // -------- MODEL --------
+ 
     static class Employee {
         private int id;
         private String name;
@@ -22,12 +22,25 @@ public class TC_4_5 {
             this.salary = salary;
         }
  
-        public int getId() { return id; }
-        public String getName() { return name; }
-        public String getDepartment() { return department; }
-        public double getSalary() { return salary; }
+        public int getId() { 
+        	return id;
+        	
+        }
+        public String getName() { 
+        	return name;
+        	
+        }
+        public String getDepartment() { 
+        	return department;
+        	
+        }
+        
+        public double getSalary() { 
+        	return salary;
+        	
+        }
  
-        // CSV helpers
+
         public String toCsv() {
             return escapeCsv(String.valueOf(id)) + "," +
                    escapeCsv(name) + "," +
@@ -51,14 +64,11 @@ public class TC_4_5 {
         }
     }
  
-    // -------- SERVICE --------
+ 
     static class EmployeeService {
  
-        /**
-         * Appends employees to a CSV file; creates file with header if missing.
-         */
         public void appendToCsv(File file, List<Employee> employees) throws IOException {
-            // Ensure parent folder exists
+
             File parent = file.getAbsoluteFile().getParentFile();
             if (parent != null && !parent.exists()) parent.mkdirs();
  
@@ -79,7 +89,7 @@ public class TC_4_5 {
         }
     }
  
-    // -------- MAIN / UI --------
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         List<Employee> employees = new ArrayList<>();
@@ -111,13 +121,13 @@ public class TC_4_5 {
             return;
         }
  
-        // Display what we captured
+      
         System.out.println("\n=== Employees Entered ===");
         for (Employee e : employees) {
             System.out.println(e);
         }
  
-        // Persist to CSV (append mode)
+     
         EmployeeService service = new EmployeeService();
         try {
             service.appendToCsv(csv, employees);
@@ -127,7 +137,6 @@ public class TC_4_5 {
         }
     }
  
-    // -------- Input helpers --------
     private static int readInt(Scanner in, String prompt) {
         while (true) {
             System.out.print(prompt);
