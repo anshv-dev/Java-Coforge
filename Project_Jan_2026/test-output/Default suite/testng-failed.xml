@@ -3,15 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SelinumPac.TC_ParallelTest">
+      <class name="SelinumPac.TC_TestNG">
         <methods>
-          <include name="test3"/>
-          <include name="test2"/>
-          <include name="teardown"/>
-          <include name="test1"/>
-          <include name="setup"/>
+          <include name="beforeTest"/>
+          <include name="afterMethod"/>
+          <include name="afterClass"/>
+          <include name="beforeSuite"/>
+          <include name="afterTest"/>
+          <include name="afterSuite"/>
+          <include name="beforeMethod"/>
+          <include name="f" invocation-numbers="0"/>
+          <include name="beforeClass"/>
         </methods>
-      </class> <!-- SelinumPac.TC_ParallelTest -->
+      </class> <!-- SelinumPac.TC_TestNG -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
