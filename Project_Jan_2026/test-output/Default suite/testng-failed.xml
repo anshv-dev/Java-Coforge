@@ -3,19 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SelinumPac.TC_TestNG">
+      <class name="com.orhrm.tests.TC2Testauto">
         <methods>
-          <include name="beforeTest"/>
-          <include name="afterMethod"/>
-          <include name="afterClass"/>
-          <include name="beforeSuite"/>
-          <include name="afterTest"/>
-          <include name="afterSuite"/>
-          <include name="beforeMethod"/>
-          <include name="f" invocation-numbers="0"/>
-          <include name="beforeClass"/>
+          <include name="setUp"/>
+          <include name="tC2"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- SelinumPac.TC_TestNG -->
+      </class> <!-- com.orhrm.tests.TC2Testauto -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
