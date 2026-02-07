@@ -3,7 +3,12 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
+      <class name="com.orhrm.tests.LoginTest_Aut"/>
+      <class name="com.orhrm.tests.Tc02Test"/>
       <class name="com.orhrm.tests.TC2Testauto"/>
+      <class name="com.orhrm.tests.NewTest"/>
+      <class name="com.orhrm.tests.AddtoCart_Test"/>
+      <class name="com.orhrm.tests.AutomationSignup"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

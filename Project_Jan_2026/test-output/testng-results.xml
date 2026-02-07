@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-04T15:50:45 IST" name="Default suite" finished-at="2026-02-04T15:51:01 IST" duration-ms="15160">
+  <suite started-at="2026-02-06T10:21:48 IST" name="Default suite" finished-at="2026-02-06T10:22:01 IST" duration-ms="13555">
     <groups>
     </groups>
-    <test started-at="2026-02-04T15:50:45 IST" name="Default test" finished-at="2026-02-04T15:51:01 IST" duration-ms="15160">
-      <class name="com.orhrm.tests.TC3Test">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.orhrm.tests.TC3Test@175c2241]" started-at="2026-02-04T15:50:46 IST" name="setUp" finished-at="2026-02-04T15:50:51 IST" duration-ms="5257" status="PASS">
+    <test started-at="2026-02-06T10:21:48 IST" name="Default test" finished-at="2026-02-06T10:22:01 IST" duration-ms="13555">
+      <class name="com.orhrm.tests.NewTest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.orhrm.tests.NewTest@175c2241]" started-at="2026-02-06T10:21:48 IST" name="beforeMethod" finished-at="2026-02-06T10:21:48 IST" duration-ms="297" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="tC3()[pri:0, instance:com.orhrm.tests.TC3Test@175c2241]" started-at="2026-02-04T15:50:51 IST" name="tC3" finished-at="2026-02-04T15:50:59 IST" duration-ms="8278" status="PASS">
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="f()[pri:0, instance:com.orhrm.tests.NewTest@175c2241]" started-at="2026-02-06T10:21:48 IST" name="f" finished-at="2026-02-06T10:22:00 IST" duration-ms="11961" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tC3 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.orhrm.tests.TC3Test@175c2241]" started-at="2026-02-04T15:50:59 IST" name="tearDown" finished-at="2026-02-04T15:51:01 IST" duration-ms="1519" status="PASS">
+        </test-method> <!-- f -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.orhrm.tests.NewTest@175c2241]" started-at="2026-02-06T10:22:00 IST" name="afterMethod" finished-at="2026-02-06T10:22:01 IST" duration-ms="1242" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.orhrm.tests.TC3Test -->
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.orhrm.tests.NewTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -24,8 +24,6 @@ import java.time.Duration;
 
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.aventstack.extentreports.ExtentReports;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
@@ -33,24 +31,31 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class TC2Testauto {
+/**
+ * Consolidated-report ready version:
+ * - Extends BaseTest to reuse the single ExtentReports instance (initialized in @BeforeSuite).
+ * - No local reporter creation or flushing here.
+ * - Per-method ExtentTest node created from the shared report.
+ * - Screenshots saved under target/Screenshots.
+ */
+public class TC2Testauto extends BaseTest {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
-  private ExtentReports extent;
+
   private ExtentTest test;
   private String projectpath;
 
   @BeforeMethod
   public void setUp() throws Exception {
     projectpath = System.getProperty("user.dir");
-    extent = new ExtentReports();
-    ExtentSparkReporter spark = new ExtentSparkReporter(projectpath + File.separator + "Contact_Report.html");
-    extent.attachReporter(spark);
-    test = extent.createTest("Verify the login");
+
+    // Create a node in the shared consolidated report
+    test = extent.createTest(this.getClass().getSimpleName() + " - tC2");
+
     driver = new ChromeDriver();
     js = (JavascriptExecutor) driver;
-    vars = new HashMap<String, Object>();
+    vars = new HashMap<>();
   }
 
   @AfterMethod
@@ -58,9 +63,7 @@ public class TC2Testauto {
     if (driver != null) {
       driver.quit();
     }
-    if (extent != null) {
-      extent.flush();
-    }
+    // Do NOT flush here — BaseTest @AfterSuite will flush the single consolidated report
   }
 
   @Test
@@ -113,7 +116,8 @@ public class TC2Testauto {
   private String takeScreenshot(String label) throws Exception {
     File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
     String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-    String dest = projectpath + File.separator + "Screenshots" + File.separator + "Screenshots_" + label + "_" + timestamp + ".png";
+    String dest = projectpath + File.separator + "target" + File.separator + "Screenshots"
+                  + File.separator + "Screenshots_" + label + "_" + timestamp + ".png";
     File destfile = new File(dest);
     destfile.getParentFile().mkdirs();
     FileUtils.copyFile(src, destfile);
@@ -122,7 +126,8 @@ public class TC2Testauto {
 
   private String takeDesktopScreenshot(String label) throws Exception {
     String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-    String dest = projectpath + File.separator + "Screenshots" + File.separator + "Screenshots_" + label + "_" + timestamp + ".png";
+    String dest = projectpath + File.separator + "target" + File.separator + "Screenshots"
+                  + File.separator + "Screenshots_" + label + "_" + timestamp + ".png";
     File destfile = new File(dest);
     destfile.getParentFile().mkdirs();
     Robot robot = new Robot();
