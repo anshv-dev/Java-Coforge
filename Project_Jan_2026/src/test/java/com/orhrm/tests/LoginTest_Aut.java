@@ -21,7 +21,6 @@ public class LoginTest_Aut extends BaseTest {
   private Map<String, Object> vars;
   private JavascriptExecutor js;
 
-  // Use the shared suite-level ExtentReports from BaseTest
   private ExtentTest test;
 
   private final String projectPath = System.getProperty("user.dir");
@@ -69,7 +68,7 @@ public class LoginTest_Aut extends BaseTest {
       if (driver != null) {
         driver.quit();
       }
-      // Do NOT flush here. BaseTest @AfterSuite will flush the single consolidated report.
+      
     }
   }
 

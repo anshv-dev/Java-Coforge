@@ -25,7 +25,6 @@ public class Tc02Test extends BaseTest {
 
     @BeforeMethod
     public void setUp() {
-        // Create a node in the shared consolidated report for this test method
         test = extent.createTest(this.getClass().getSimpleName() + " - tc02");
 
         driver = new ChromeDriver();
@@ -95,7 +94,6 @@ public class Tc02Test extends BaseTest {
                 test.skip("Test Skipped");
             }
             if (driver != null) driver.quit();
-            // Do NOT flush here; BaseTest @AfterSuite will flush the consolidated report
         }
     }
 

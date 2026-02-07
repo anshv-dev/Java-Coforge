@@ -21,14 +21,14 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.ExtentTest;
 
 public class NewTest extends BaseTest {
-  private AndroidDriver driver;            // also assigned to BaseTest's 'driver' for screenshots if needed
+  private AndroidDriver driver;            
   private ExtentTest test;
   private String projectpath;
 
   @BeforeMethod
   public void beforeMethod() throws Exception {
     projectpath = System.getProperty("user.dir");
-    // Create a test node in the shared Extent report
+   
     test = extent.createTest(this.getClass().getSimpleName() + " - f");
 
     DesiredCapabilities caps = new DesiredCapabilities();
@@ -45,8 +45,7 @@ public class NewTest extends BaseTest {
     driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), caps);
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
 
-    // Optional: if you want BaseTest's failure-screenshot to work automatically,
-    // you can also set BaseTest.driver to this same instance:
+    
     this.driver = driver;
   }
 
@@ -55,7 +54,7 @@ public class NewTest extends BaseTest {
     if (driver != null) {
       driver.quit();
     }
-    // DO NOT flush here; BaseTest @AfterSuite will flush the single consolidated report
+    
   }
 
   @Test

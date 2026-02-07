@@ -27,14 +27,12 @@ public class AddtoCart_Test extends BaseTest {
   private Map<String, Object> vars;
   private JavascriptExecutor js;
 
-  // Use the shared ExtentReports 'extent' from BaseTest
   private ExtentTest test;
 
   private final String projectPath = System.getProperty("user.dir");
 
   @BeforeMethod
   public void setUp(Method method) {
-    // Create a per-test Extent node using the shared report from BaseTest
     String className = this.getClass().getSimpleName();
     String methodName = method.getName();
     test = extent.createTest(className + " - " + methodName);

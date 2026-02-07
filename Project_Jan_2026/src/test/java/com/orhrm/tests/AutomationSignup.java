@@ -23,7 +23,7 @@ import org.apache.commons.io.FileUtils;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.ExtentTest;
 
-// NOTE: This class now reuses the single ExtentReports from BaseTest
+
 public class AutomationSignup extends BaseTest {
   private WebDriver driver;
   private Map<String, Object> vars;
@@ -70,7 +70,6 @@ public class AutomationSignup extends BaseTest {
       if (driver != null) {
         driver.quit();
       }
-      // DO NOT flush here — BaseTest @AfterSuite flushes once for the whole suite
     }
   }
 

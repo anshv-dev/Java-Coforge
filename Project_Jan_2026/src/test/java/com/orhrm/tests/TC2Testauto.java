@@ -50,7 +50,7 @@ public class TC2Testauto extends BaseTest {
   public void setUp() throws Exception {
     projectpath = System.getProperty("user.dir");
 
-    // Create a node in the shared consolidated report
+  
     test = extent.createTest(this.getClass().getSimpleName() + " - tC2");
 
     driver = new ChromeDriver();
@@ -63,7 +63,7 @@ public class TC2Testauto extends BaseTest {
     if (driver != null) {
       driver.quit();
     }
-    // Do NOT flush here — BaseTest @AfterSuite will flush the single consolidated report
+    
   }
 
   @Test
